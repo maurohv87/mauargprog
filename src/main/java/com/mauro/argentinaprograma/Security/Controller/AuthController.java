@@ -80,7 +80,8 @@ public class AuthController {
         return new ResponseEntity(new Mensaje("Usuario guardado"),HttpStatus.CREATED);
     }
     
-    @PostMapping("/loginn")
+    @CrossOrigin(origins = "https://mi-primer-portfolio-543b3.web.app")
+    @PostMapping("/login")
     public ResponseEntity<JwtDto> login(@Valid @RequestBody LoginUsuario loginUsuario, BindingResult bindingResult){
         if(bindingResult.hasErrors())
             return new ResponseEntity(new Mensaje("Campos mal puestos"), HttpStatus.BAD_REQUEST);
